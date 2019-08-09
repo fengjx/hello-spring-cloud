@@ -1,0 +1,14 @@
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (6, 'management.endpoints.web.exposure.include', '*', 'application', 'default', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (7, 'myval', 'testval', 'hsc-user', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (8, 'k1', 'v1', 'application', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (9, 'spring.cloud.zookeeper.connect-string', '192.168.1.106:2181', 'hsc-discovery', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (11, 'spring.cloud.zookeeper.discovery.enabled', 'true', 'hsc-discovery', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (12, 'spring.cloud.zookeeper.discovery.root', '/hsc', 'hsc-discovery', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (13, 'spring.zipkin.base-url', 'http://192.168.1.106:9411', 'application', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (14, 'spring.boot.admin.client.url', 'http://localhost:8003', 'application', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (15, 'application_packages', 'com.fengjx,org.springframework', 'application', 'default', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (16, 'server_urls', 'http://192.168.1.106:8200', 'es-apm', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (17, 'spring.datasource.driver-class-name', 'com.mysql.cj.jdbc.Driver', 'hsc-jdbc', 'default', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (18, 'spring.datasource.url', 'jdbc:mysql://127.0.0.1:3306/hsc?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8', 'hsc-jdbc', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (19, 'spring.datasource.username', 'fjx', 'hsc-jdbc', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (20, 'spring.datasource.password', '1234', 'hsc-jdbc', 'test', 'master');

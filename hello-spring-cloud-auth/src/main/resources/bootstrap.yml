@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: hsc-auth
+  profiles:
+    active: test

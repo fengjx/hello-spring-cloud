@@ -1,0 +1,25 @@
+server:
+  port: 8000
+
+spring:
+  cloud:
+    zookeeper:
+      discovery:
+        register: false
+    gateway:
+      routes:
+        - id: discovery_route
+          predicates:
+            - Path=/openapi/{app}/{segment}
+          uri: lb://app
+          filters:
+            - Discovery
+            - SetPath=/openapi/{segment}
+            - name: RequestRateLimiter
+              args:
+                key-resolver: "#{@ipKeyResolver}"
+                redis-rate-limiter:
+                  # 允许每秒处理多少个请求
+                  replenishRate: 10
+                  # 令牌桶的容量，允许在一秒钟内完成的最大请求数
+                  burst-capacity: 20

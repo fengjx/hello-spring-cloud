@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      uri: http://hello:1024@localhost:8002
+      profile: test
+

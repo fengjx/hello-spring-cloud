@@ -1,0 +1,6 @@
+server:
+  port: 8100
+
+logging:
+  level:
+    com.fengjx.hello.springcloud.user.mapper: debug

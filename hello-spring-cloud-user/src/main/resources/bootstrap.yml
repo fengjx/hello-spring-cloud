@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hsc-user
+  profiles:
+    active: test
+  cloud:
+    config:
+      name: hsc-user,hsc-discovery,hsc-jdbc,es-apm
+      label: master

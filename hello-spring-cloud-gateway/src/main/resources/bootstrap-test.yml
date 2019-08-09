@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://hello:1024@localhost:8002
+      name: hsc-gateway,hsc-discovery
+      label: master
+      profile: test

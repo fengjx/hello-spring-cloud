@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hsc?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: fjx
+    password: 1234
+  cloud:
+    zookeeper:
+      connect-string: 192.168.1.106:2181
+      discovery:
+        enabled: true
+        root: /hsc
+  security:
+    user:
+      name: hello
+      password: 1024
+
+
