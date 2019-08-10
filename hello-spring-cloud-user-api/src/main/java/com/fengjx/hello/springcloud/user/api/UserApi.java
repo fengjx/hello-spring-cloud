@@ -1,20 +1,45 @@
 package com.fengjx.hello.springcloud.user.api;
 
-import com.fengjx.hello.springcloud.commons.api.FallbackApi;
 import com.fengjx.hello.springcloud.user.entity.User;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
 
 /**
  * @author fengjianxin
  */
-@FeignClient(name = "hsc-uaer", fallback = FallbackApi.class)
-public interface UserApi {
+public class UserApi {
 
-    @RequestMapping("/hello")
-    String hello();
+    private static final String USER_URL = "http://hsc-user/%s";
 
-    @RequestMapping("findById")
-    public User findById(Long id);
+    public UserApi(){
+        System.out.println("========userApi==========");
+    }
+
+    @Resource
+    private RestTemplate loadBalancedRestTemplate;
+
+    @HystrixCommand(fallbackMethod = "fallback")
+    public String hello() {
+        return loadBalancedRestTemplate.getForObject(String.format(USER_URL, "hello"), String.class);
+    }
+
+
+    @HystrixCommand(fallbackMethod = "fallbackindById")
+    public User findById(Long id) {
+        return loadBalancedRestTemplate.getForObject(String.format(USER_URL, "findById?id={?}"), User.class, id);
+    }
+
+    public String fallback() {
+        return "fallback";
+    }
+
+    public User fallbackindById(Long id) {
+        User user = new User();
+        user.setId(id);
+        return user;
+    }
 
 }
+

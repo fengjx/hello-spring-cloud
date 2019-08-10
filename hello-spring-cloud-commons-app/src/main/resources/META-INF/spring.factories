@@ -1,3 +1,2 @@
 # 自动装配
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.fengjx.hello.springcloud.commons.api.spring.boot.autoconfigure.ApiAutoconfigure

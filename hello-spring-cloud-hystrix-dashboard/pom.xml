@@ -6,47 +6,38 @@
         <groupId>com.fengjx.hello.springcloud</groupId>
         <artifactId>hello-spring-cloud</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>hello-spring-cloud-gateway</artifactId>
+    <artifactId>hello-spring-cloud-hystrix-dashboard</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>hello-spring-cloud-gateway</name>
-    <description>spring-cloud 网关服务</description>
+    <name>hello-spring-cloud-hystrix-dashboard</name>
+    <description>hystrix监控面板</description>
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.fengjx.hello.springcloud</groupId>
-            <artifactId>hello-spring-cloud-commons-app</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
+            <artifactId>spring-cloud-starter-netflix-turbine-stream</artifactId>
+        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

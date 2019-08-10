@@ -4,13 +4,10 @@ import com.fengjx.hello.springcloud.user.api.UserApi;
 import com.fengjx.hello.springcloud.user.entity.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import java.io.IOException;
 
 /**
  * @author fengjianxin
@@ -23,9 +20,6 @@ public class HelloController {
 
     @Resource
     private DiscoveryClient discoveryClient;
-
-    @Resource
-    private RestTemplate loadBalancedRestTemplate;
 
     @Resource
     private UserApi userApi;
@@ -42,7 +36,7 @@ public class HelloController {
 
     @RequestMapping("/hello-user")
     public Object helloUser() {
-        return loadBalancedRestTemplate.getForEntity("http://hsc-user/hello", String.class);
+        return userApi.hello();
     }
 
     @RequestMapping("/find-user")

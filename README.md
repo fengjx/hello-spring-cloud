@@ -10,3 +10,8 @@
 - [ ] hello-spring-cloud-auth - 认证服务
 
 
+elastic-apm监控
+```
+-javaagent:/Users/fengjianxin/opt/elk/apm-agent/elastic-apm-agent-1.8.0.jar
+-Delastic.apm.service_name=hsc-auth
+```
