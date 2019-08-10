@@ -2,5 +2,12 @@ server:
   port: 8100
 
 logging:
+  path: ./logs
   level:
     com.fengjx.hello.springcloud.user.mapper: debug
+
+spring:
+  cloud:
+    sentinel:
+      log:
+        dir: ${logging.path}

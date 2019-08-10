@@ -1,6 +1,9 @@
 server:
   port: 8000
 
+logging:
+  path: ./logs
+
 spring:
   cloud:
     zookeeper:
@@ -23,3 +26,6 @@ spring:
                   replenishRate: 10
                   # 令牌桶的容量，允许在一秒钟内完成的最大请求数
                   burst-capacity: 20
+    sentinel:
+      log:
+        dir: ${logging.path}

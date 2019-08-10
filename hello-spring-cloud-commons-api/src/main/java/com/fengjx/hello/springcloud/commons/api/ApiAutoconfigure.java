@@ -12,13 +12,12 @@ import org.springframework.web.client.RestTemplate;
  */
 @Configuration
 @ConditionalOnProperty(
-        prefix = "hsc.api",
+        prefix = "hsc.api.load-balanced",
         name = "enabled",
         havingValue = "true",
         matchIfMissing = true
 )
 public class ApiAutoconfigure {
-
 
     @Bean
     @LoadBalanced

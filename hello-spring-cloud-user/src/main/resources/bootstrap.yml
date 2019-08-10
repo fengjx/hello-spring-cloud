@@ -5,5 +5,5 @@ spring:
     active: test
   cloud:
     config:
-      name: hsc-user,hsc-discovery,hsc-jdbc,es-apm
+      name: hsc-user,hsc-discovery,hsc-jdbc,hsc-sentinel
       label: master

@@ -1,7 +1,12 @@
 server:
   port: 8101
 
-hsc:
-  api:
-    enabled: true
-    
+logging:
+  path: ./logs
+
+spring:
+  cloud:
+    sentinel:
+      log:
+        dir: ${logging.path}
+

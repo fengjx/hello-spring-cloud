@@ -1,6 +1,5 @@
 package com.fengjx.hello.springcloud.user.api;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,7 +16,6 @@ public class AuthApi {
     @Resource
     private RestTemplate loadBalancedRestTemplate;
 
-    @HystrixCommand(fallbackMethod = "fallback")
     public String hello() {
         return loadBalancedRestTemplate.getForObject(String.format(USER_URL, "hello"), String.class);
     }

@@ -2,6 +2,6 @@ spring:
   cloud:
     config:
       uri: http://hello:1024@localhost:8002
-      name: hsc-auth,hsc-discovery
+      name: hsc-auth,hsc-discovery,hsc-sentinel
       label: master
       profile: test

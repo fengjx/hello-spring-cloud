@@ -37,6 +37,7 @@
         <elastic-apm.version>1.8.0</elastic-apm.version>
         <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
         <zookeeper.version>3.5.5</zookeeper.version>
+        <spring-cloud-starter-alibaba.version>2.1.0.RELEASE</spring-cloud-starter-alibaba.version>
     </properties>
 
     <dependencyManagement>
@@ -47,6 +48,11 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+                <version>${spring-cloud-starter-alibaba.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
