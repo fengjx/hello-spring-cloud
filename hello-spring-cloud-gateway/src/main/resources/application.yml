@@ -1,5 +1,8 @@
 server:
   port: 8000
+  error:
+    include-exception: true
+
 
 spring:
   cloud:
@@ -8,7 +11,7 @@ spring:
         register: false
     gateway:
       routes:
-        - id: discovery_route
+        - id: openapi_route
           predicates:
             - Path=/openapi/{app}/{segment}
           uri: lb://app
@@ -23,3 +26,11 @@ spring:
                   replenishRate: 10
                   # 令牌桶的容量，允许在一秒钟内完成的最大请求数
                   burst-capacity: 20
+
+        - id: innerapi_route
+          predicates:
+            - Path=/innerapi/{app}/{segment}
+          uri: lb://app
+          filters:
+            - Discovery
+            - SetPath=/{segment}

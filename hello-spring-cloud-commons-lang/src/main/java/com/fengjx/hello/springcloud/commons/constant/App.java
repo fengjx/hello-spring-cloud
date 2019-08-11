@@ -7,7 +7,8 @@ public class App {
 
     public static final String APP_PREFIX = "hsc-";
 
-    public static final String OPEN_API = "openapi";
+    public static final String OPEN_API = "/openapi";
+    public static final String INNER_API = "/innerapi";
 
 
 }

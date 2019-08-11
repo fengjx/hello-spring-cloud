@@ -26,9 +26,14 @@ public class HelloController {
     @Resource
     private UserApi userApi;
 
+    @RequestMapping("/info")
+    public Object info() {
+        return discoveryClient.getInstances(appName);
+    }
+
     @RequestMapping("/hello")
     public Object hello() {
-        return discoveryClient.getInstances(appName);
+        return "hello: " + appName;
     }
 
     @RequestMapping("/openapi/ping")
