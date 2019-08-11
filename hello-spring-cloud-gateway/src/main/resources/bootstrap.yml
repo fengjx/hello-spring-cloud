@@ -3,3 +3,7 @@ spring:
     name: hsc-gateway
   profiles:
     active: test
+  cloud:
+    config:
+      name: hsc-gateway,hsc-discovery,hsc-redis
+      label: master
