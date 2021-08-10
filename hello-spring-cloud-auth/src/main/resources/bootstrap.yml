@@ -3,3 +3,7 @@ spring:
     name: hsc-auth
   profiles:
     active: test
+  cloud:
+    config:
+      name: hsc-auth,hsc-discovery,hsc-sentinel
+      label: master

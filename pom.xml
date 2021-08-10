@@ -32,12 +32,16 @@
     <properties>
         <Encoding>UTF-8</Encoding>
         <java.version>1.8</java.version>
+        <fastjson.version>1.2.59</fastjson.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-collections.version>3.2.1</commons-collections.version>
+        <hutool-all.version>4.6.1</hutool-all.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <elastic-apm.version>1.8.0</elastic-apm.version>
         <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
         <zookeeper.version>3.5.5</zookeeper.version>
-        <spring-cloud-starter-alibaba.version>2.1.0.RELEASE</spring-cloud-starter-alibaba.version>
+        <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
     <dependencyManagement>
@@ -51,13 +55,28 @@
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-                <version>${spring-cloud-starter-alibaba.version}</version>
+                <artifactId>spring-cloud-alibaba-sentinel</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.9</version>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons-collections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
             <dependency>
                 <groupId>de.codecentric</groupId>

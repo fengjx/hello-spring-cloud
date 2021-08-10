@@ -12,3 +12,12 @@ INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUE
 INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (18, 'spring.datasource.url', 'jdbc:mysql://127.0.0.1:3306/hsc?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8', 'hsc-jdbc', 'test', 'master');
 INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (19, 'spring.datasource.username', 'fjx', 'hsc-jdbc', 'test', 'master');
 INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (20, 'spring.datasource.password', '1234', 'hsc-jdbc', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (21, 'feign.hystrix.enabled', 'true', 'application', 'default', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (22, 'spring.redis.host', '192.168.1.106', 'hsc-redis', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (23, 'spring.redis.port', '6379', 'hsc-redis', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (24, 'spring.redis.lettuce.pool.max-active', '5', 'hsc-redis', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (25, 'spring.redis.lettuce.pool.max-wait', '500', 'hsc-redis', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (26, 'spring.redis.lettuce.pool.min-idle', '1', 'hsc-redis', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (27, 'spring.cloud.sentinel.transport.dashboard', '192.168.1.106:8811', 'hsc-sentinel', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (28, 'spring.cloud.sentinel.log.dir', '${logging.path}', 'hsc-sentinel', 'test', 'master');
+INSERT INTO hsc.app_config (id, `key`, value, application, profile, label) VALUES (29, 'logging.path', './logs', 'application', 'test', 'master');

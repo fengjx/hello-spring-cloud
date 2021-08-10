@@ -1,12 +1,4 @@
 server:
   port: 8101
 
-logging:
-  path: ./logs
-
-spring:
-  cloud:
-    sentinel:
-      log:
-        dir: ${logging.path}
 

@@ -1,6 +1,7 @@
 package com.fengjx.hello.springcloud.user.web;
 
 import com.fengjx.hello.springcloud.user.api.AuthApi;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import javax.annotation.Resource;
 /**
  * @author fengjianxin
  */
+@Slf4j
 @RestController
 public class HelloController {
 
@@ -40,6 +42,7 @@ public class HelloController {
 
     @RequestMapping("/openapi/ping")
     public Object ping() {
+        log.info("ping");
         return "pong";
     }
 

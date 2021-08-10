@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <artifactId>spring-cloud-alibaba-sentinel</artifactId>
         </dependency>
     </dependencies>
 

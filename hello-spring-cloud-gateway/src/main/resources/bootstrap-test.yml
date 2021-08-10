@@ -2,6 +2,7 @@ spring:
   cloud:
     config:
       uri: http://hello:1024@localhost:8002
-      name: hsc-gateway,hsc-discovery,hsc-redis,hsc-sentinel
-      label: master
       profile: test
+
+logging:
+  path: ./logs
