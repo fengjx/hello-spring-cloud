@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.cloud.gateway.route.Route;
+import org.springframework.cloud.gateway.support.NotFoundException;
 import org.springframework.http.server.RequestPath;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -32,8 +33,13 @@ public class DiscoveryGatewayFilterFactory extends AbstractGatewayFilterFactory 
                 return chain.filter(exchange);
             }
 
+            String service = getUriString(path);
+            if (StringUtils.isBlank(service)) {
+                throw new NotFoundException("can not found service for path: " + path);
+            }
+
             // 重构URI
-            URI newUri = UriComponentsBuilder.fromUriString(getUriString(path)).build().toUri();
+            URI newUri = UriComponentsBuilder.fromUriString(service).build().toUri();
             // 重构路由
             Route newRoute = Route.async().id(route.getId())
                     .uri(newUri)
@@ -51,8 +57,14 @@ public class DiscoveryGatewayFilterFactory extends AbstractGatewayFilterFactory 
      */
     private String getUriString(RequestPath path) {
         String value = path.value();
-        String service = StringUtils.substringBetween(value, App.OPEN_API + "/", "/");
-        return "lb://" + App.APP_PREFIX + service;
+        if (StringUtils.startsWith(value, App.OPEN_API)) {
+            String service = StringUtils.substringBetween(value, App.OPEN_API + "/", "/");
+            return "lb://" + App.APP_PREFIX + service;
+        } else if (StringUtils.startsWith(value, App.INNER_API)) {
+            String service = StringUtils.substringBetween(value, App.INNER_API + "/", "/");
+            return "lb://" + App.APP_PREFIX + service;
+        }
+        return "";
     }
 
 }
