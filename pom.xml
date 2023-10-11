@@ -40,7 +40,7 @@
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <elastic-apm.version>1.8.0</elastic-apm.version>
         <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
-        <zookeeper.version>3.5.5</zookeeper.version>
+        <zookeeper.version>3.7.2</zookeeper.version>
         <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
